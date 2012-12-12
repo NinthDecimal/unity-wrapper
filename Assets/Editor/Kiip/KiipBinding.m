@@ -7,7 +7,7 @@
 //
 
 #import "KiipManager.h"
-#import <KiipSDK/KiipSDK.h>
+#import "KiipSDK.h"
 
 
 // Converts NSString to C style string by way of copy (Mono will free it)

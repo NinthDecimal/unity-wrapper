@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <KiipSDK/KiipSDK.h>
+#import "KiipSDK.h"
 
 
 @interface KiipManager : NSObject <KiipDelegate, KPModalDelegate, KPNotificationDelegate, KPPoptartDelegate>
