@@ -126,7 +126,7 @@ extern NSString * const kKPCapabilities_Swarm;
         and an Error. The Poptart may return nil if no reward has been issued. The Error will be 
         nil if the request completed successfully.
  */
-- (void) saveMoment:(NSString *)momentId withCompletionHandler:(void (^)(KPPoptart *, NSError *))handler;
+- (void) saveMoment:(NSString *)momentId withCompletionHandler:(void (^)(KPPoptart *poptart, NSError *error))handler;
 
 /**
  Saves a moment.
@@ -137,7 +137,7 @@ extern NSString * const kKPCapabilities_Swarm;
  and an Error. The Poptart may return nil if no reward has been issued. The Error will be
  nil if the request completed successfully.
  */
-- (void) saveMoment:(NSString *)momentId value:(double)value withCompletionHandler:(void (^)(KPPoptart *, NSError *error))handler;
+- (void) saveMoment:(NSString *)momentId value:(double)value withCompletionHandler:(void (^)(KPPoptart *poptart, NSError *error))handler;
 
 @end
 
