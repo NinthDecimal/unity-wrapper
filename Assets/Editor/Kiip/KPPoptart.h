@@ -70,9 +70,7 @@
  @param poptart The poptart that will be presented.
  */
 - (void) willPresentPoptart:(KPPoptart *)poptart;
-//TODO -(void)didPresentPoptart:(KPPoptart *)poptart;
 
-//TODO - (void)wilLDismissPoptart:(KPPoptart *)poptart;
 /**
  Tells the delegate a Poptart was dismissed.
  
