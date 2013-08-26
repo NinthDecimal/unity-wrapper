@@ -74,9 +74,7 @@ typedef enum {
  @param notification The Notification that will be presented.
  */
 - (void) willPresentNotification:(KPNotification *)notification;
-//TODO - (void)didPresentNotification:(KPNotification *)notification;
 
-//TODO - (void)willDismissNotification:(KPNotification *)notification;
 /**
  Tells the delegate that a Notification was dismissed.
  
@@ -84,7 +82,6 @@ typedef enum {
  */
 - (void) didDismissNotification:(KPNotification *)notification;
 
-//TODO - (void)willDismissNotificationWithClick:(KPNotification *)notification;
 /**
  Tells the delegate that a Notification was dismissed by clicking it.
  

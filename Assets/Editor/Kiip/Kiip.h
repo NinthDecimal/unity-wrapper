@@ -139,6 +139,12 @@ extern NSString * const kKPCapabilities_Swarm;
  */
 - (void) saveMoment:(NSString *)momentId value:(double)value withCompletionHandler:(void (^)(KPPoptart *poptart, NSError *error))handler;
 
+
+/**
+ Shows a promotion.
+*/
+- (void) showPromo;
+
 @end
 
 /**

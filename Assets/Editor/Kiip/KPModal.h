@@ -54,9 +54,7 @@
  @param modal The Modal that will be presented.
  */
 - (void) willPresentModal:(KPModal *)modal;
-//TODO - (void)didPresentModal:(KPModal *)modal;
 
-//TODO - (void)willDismissModal:(KPModal *)modal;
 /**
  Tells the delegate that a Modal was dismissed.
  
