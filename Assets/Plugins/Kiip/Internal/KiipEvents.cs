@@ -74,10 +74,10 @@ public partial class Kiip : MonoBehaviour
 	public static event Action onDismissModalEvent;
 	
 	// Fired when a poptart is shown
-	public static event Action onShowPoptartEvent;
+	// public static event Action onShowPoptartEvent;
 	
 	// Fired when a poptart is dismissed
-	public static event Action onDismissPoptartEvent;
+	// public static event Action onDismissPoptartEvent;
 	
 	
 	
@@ -158,7 +158,7 @@ public partial class Kiip : MonoBehaviour
 	}
 	
 	
-	public void onShowPoptart( string empty )
+	/* public void onShowPoptart( string empty )
 	{
 		if( onShowPoptartEvent != null )
 			onShowPoptartEvent();
@@ -169,6 +169,6 @@ public partial class Kiip : MonoBehaviour
 	{
 		if( onDismissPoptartEvent != null )
 			onDismissPoptartEvent();
-	}
+	} */
 
 }
