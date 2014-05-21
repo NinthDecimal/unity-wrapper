@@ -199,4 +199,20 @@ extern NSString * const kKPCapabilities_Swarm;
  */
 - (void) kiip:(Kiip *)kiip didReceiveContent:(NSString *)content quantity:(int)quantity transactionId:(NSString *)transactionId signature:(NSString *)signature;
 
+/** @name Video Playback Callbacks */
+
+/**
+ Tells the delegate that a video session has begun.
+ 
+@param kiip The Kiip instance that has begun playing video.
+ */
+- (void) kiipVideoPlaybackDidBegin:(Kiip *)kiip;
+
+/**
+ Tells the delegate that a video session has ended.
+ 
+ @param kiip The Kiip instance that has finished playing video.
+ */
+- (void) kiipVideoPlaybackDidEnd:(Kiip *)kiip;
+
 @end

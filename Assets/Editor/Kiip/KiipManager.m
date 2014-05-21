@@ -129,6 +129,16 @@ UIViewController *UnityGetGLViewController();
 	UnitySendMessage( "Kiip", "onContent", str.UTF8String );
 }
 
+- (void)kiipVideoPlaybackDidBegin:(Kiip *)kiip
+{
+    UnitySendMessage( "Kiip", "onVideoShow", "");
+}
+
+- (void)kiipVideoPlaybackDidEnd:(Kiip *)kiip
+{
+    UnitySendMessage( "Kiip", "onVideoDismiss", "");
+}
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - KiipModalDelegate
