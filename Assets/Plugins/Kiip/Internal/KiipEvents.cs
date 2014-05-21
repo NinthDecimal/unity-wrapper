@@ -78,13 +78,22 @@ public partial class Kiip : MonoBehaviour
 	
 	// Fired when a poptart is dismissed
 	public static event Action onDismissPoptartEvent;
+
+	// Fired when a video is shown
+	public static event Action onVideoShowEvent;
+
+	// Fired when a video is dismissed
+	public static event Action onVideoDismissEvent;
 	
 	
 	
 	public void sessionFailedToStart( string param )
 	{
 		if( sessionFailedToStartEvent != null )
+		{
+			if ( string.IsNullOrEmpty( param ) ) { param = "Kiip Error"; }
 			sessionFailedToStartEvent( param );
+		}
 	}
 
 
@@ -98,7 +107,10 @@ public partial class Kiip : MonoBehaviour
 	public void onSaveMomentFailed( string param )
 	{
 		if( onSaveMomentFailedEvent != null )
+		{
+			if ( string.IsNullOrEmpty( param ) ){ param = "Kiip Error"; }
 			onSaveMomentFailedEvent( param );
+		}
 	}
 
 
@@ -171,4 +183,15 @@ public partial class Kiip : MonoBehaviour
 			onDismissPoptartEvent();
 	}
 
+	public void onVideoShow( string empty )
+	{
+		if( onVideoShowEvent != null )
+			onVideoShowEvent();
+	}
+
+	public void onVideoDismiss( string empty )
+	{
+		if( onVideoDismissEvent != null )
+			onVideoDismissEvent();
+	}
 }

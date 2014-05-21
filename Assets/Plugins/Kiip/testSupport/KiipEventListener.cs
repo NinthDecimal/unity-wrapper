@@ -23,6 +23,8 @@ public class KiipEventListener : MonoBehaviour
 		Kiip.onDismissModalEvent += onDismissModalEvent;
 		Kiip.onShowPoptartEvent += onShowPoptartEvent;
 		Kiip.onDismissPoptartEvent += onDismissPoptartEvent;
+		Kiip.onVideoShowEvent += onVideoShowEvent;
+		Kiip.onVideoDismissEvent += onVideoDismissEvent;
 	}
 
 
@@ -42,6 +44,8 @@ public class KiipEventListener : MonoBehaviour
 		Kiip.onDismissModalEvent -= onDismissModalEvent;
 		Kiip.onShowPoptartEvent -= onShowPoptartEvent;
 		Kiip.onDismissPoptartEvent -= onDismissPoptartEvent;
+		Kiip.onVideoShowEvent -= onVideoShowEvent;
+		Kiip.onVideoDismissEvent -= onVideoDismissEvent;
 	}
 
 
@@ -121,6 +125,16 @@ public class KiipEventListener : MonoBehaviour
 	void onDismissPoptartEvent()
 	{
 		Debug.Log( "onDismissPoptartEvent" );
+	}
+
+	void onVideoShowEvent()
+	{
+		Debug.Log( "onVideoShowEvent" );
+	}
+
+	void onVideoDismissEvent()
+	{
+		Debug.Log( "onVideoDismissEvent" );
 	}
 #endif
 }
