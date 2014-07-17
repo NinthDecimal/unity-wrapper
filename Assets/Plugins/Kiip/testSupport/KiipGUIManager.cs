@@ -35,8 +35,7 @@ public class KiipGUIManager : MonoBehaviour
 	
 		if( GUI.Button( new Rect( xPos, yPos += heightPlus, width, height ), "Set Kiip Properties" ) )
 		{
-			Kiip.instance.alias = "unique-alias";
-			Kiip.instance.gender = "m";
+			Kiip.instance.gender = "Male";
 			Kiip.instance.birthday = System.DateTime.Now;
 			Kiip.instance.email = "someemail@email.net";
 			

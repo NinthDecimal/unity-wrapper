@@ -15,7 +15,6 @@ public class KiipEventListener : MonoBehaviour
 		Kiip.onSaveMomentFailedEvent += onSaveMomentFailedEvent;
 		Kiip.onSaveMomentFinishedEvent += onSaveMomentFinishedEvent;
 		Kiip.onContentEvent += onContentEvent;
-		Kiip.onSwarmEvent += onSwarmEvent;
 		Kiip.onShowNotificationEvent += onShowNotificationEvent;
 		Kiip.onClickNotificationEvent += onClickNotificationEvent;
 		Kiip.onDismissNotificationEvent += onDismissNotificationEvent;
@@ -36,7 +35,6 @@ public class KiipEventListener : MonoBehaviour
 		Kiip.onSaveMomentFailedEvent -= onSaveMomentFailedEvent;
 		Kiip.onSaveMomentFinishedEvent -= onSaveMomentFinishedEvent;
 		Kiip.onContentEvent -= onContentEvent;
-		Kiip.onSwarmEvent -= onSwarmEvent;
 		Kiip.onShowNotificationEvent -= onShowNotificationEvent;
 		Kiip.onClickNotificationEvent -= onClickNotificationEvent;
 		Kiip.onDismissNotificationEvent -= onDismissNotificationEvent;
@@ -78,13 +76,6 @@ public class KiipEventListener : MonoBehaviour
 	{
 		Debug.Log( "onContentEvent: " + content );
 	}
-
-
-	void onSwarmEvent( string id )
-	{
-		Debug.Log( "onSwarmEvent: " + id );
-	}
-
 
 	void onShowNotificationEvent()
 	{
