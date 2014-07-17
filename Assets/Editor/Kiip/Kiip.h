@@ -14,7 +14,7 @@ extern NSString * const KPVersion;
 
 extern NSString * const kKPCapabilities_Real;
 extern NSString * const kKPCapabilities_Virtual;
-extern NSString * const kKPCapabilities_Swarm;
+extern NSString * const kKPCapabilities_Video;
 
 
 @protocol KiipDelegate;
@@ -50,7 +50,7 @@ extern NSString * const kKPCapabilities_Swarm;
  
  This must be called AFTER setting the delegate to override the automatically detected capabilities.
  
- Use kKPCapabilities_Real, kKPCapabilities_Virtual, kKPCapabilities_Swarm
+ Use kKPCapabilities_Real, kKPCapabilities_Virtual, kKPCapabilities_Video
  */
 @property (strong, nonatomic) NSArray *capabilities;
 
@@ -58,11 +58,6 @@ extern NSString * const kKPCapabilities_Swarm;
  The user's email address. Setting this will auto-populate units with their email address.
  */
 @property (strong, nonatomic) NSString *email;
-
-/**
- The user's alias. Setting this will auto-populate Kiip units with their alias.
- */
-@property (strong, nonatomic) NSString *alias;
 
 /**
  The user's gender. Setting this will help target rewards to your users more effectively.
@@ -139,12 +134,6 @@ extern NSString * const kKPCapabilities_Swarm;
  */
 - (void) saveMoment:(NSString *)momentId value:(double)value withCompletionHandler:(void (^)(KPPoptart *poptart, NSError *error))handler;
 
-
-/**
- Shows a promotion.
-*/
-- (void) showPromo;
-
 @end
 
 /**
@@ -173,17 +162,6 @@ extern NSString * const kKPCapabilities_Swarm;
  @param error If not nil, an error occured.
  */
 - (void) kiip:(Kiip *)kiip didEndSessionWithError:(NSError *)error;
-
-
-/** @name Managing Swarm */
-
-/**
- Tells the delegate that the user has opted into a Swarm.
-
- @param kiip The Kiip instance that started the swarm.
- @param momentId The momentId that should be called at the end of the Swarm game mode.
- */
-- (void) kiip:(Kiip *)kiip didStartSwarm:(NSString *)momentId;
 
 
 /** @name Managing Virtual Achievements */

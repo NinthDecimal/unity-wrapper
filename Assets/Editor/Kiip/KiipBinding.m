@@ -52,13 +52,6 @@ void _kiipSetEmail( const char * email )
 	[Kiip sharedInstance].email = GetStringParam( email );
 }
 
-
-void _kiipSetAlias( const char * alias )
-{
-	[Kiip sharedInstance].alias = GetStringParam( alias );
-}
-
-
 void _kiipSetGender( const char * gender )
 {
 	[Kiip sharedInstance].gender = GetStringParam( gender );
