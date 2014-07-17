@@ -1,6 +1,15 @@
 # Kiip Unity Wrapper Updates
 
-## 5/21/2014
+## 7/17/2014 - 1.1
+
+- Upgrade to iOS SDK 2.1.0
+- Upgrade to Android SDK 2.1.0
+- Remove swarm and alias methods
+- Accept GZip headers
+- Google Advertising ID (Android only)
+- Bug fix: crash on init (Android only)
+
+## 5/21/2014 - 1.0
 
 - update iOS to SDK version 2.0.8
 - update Android to SDK version 2.0.9

@@ -21,7 +21,6 @@
     public bool shouldAutoRotate
     public DeviceOrientation interfaceOrientation
     public string email
-    public string alias
     public string gender
     public DateTime birthday
 
