@@ -55,9 +55,6 @@ public partial class Kiip : MonoBehaviour
 	// Fired when a Content object is received
 	public static event Action<Content> onContentEvent;
 
-	// Fired when a swarm event occurs
-	public static event Action<string> onSwarmEvent;
-
 	// Fired when a notification is shown
 	public static event Action onShowNotificationEvent;
 
@@ -126,15 +123,7 @@ public partial class Kiip : MonoBehaviour
 		if( onContentEvent != null )
 			onContentEvent( Content.fromCommaDelimitedString( commaDelimitedString ) );
 	}
-
-
-	public void onSwarm( string id )
-	{
-		if( onSwarmEvent != null )
-			onSwarmEvent( id );
-	}
-
-
+	
 	public void onShowNotification( string empty )
 	{
 		if( onShowNotificationEvent != null )

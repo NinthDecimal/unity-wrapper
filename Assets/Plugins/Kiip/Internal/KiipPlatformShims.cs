@@ -48,16 +48,6 @@ public partial class Kiip : MonoBehaviour
 			_plugin.Call( "setEmail", email );
 		}
 		
-		
-		public static void setAlias( string alias )
-		{
-			if( Application.platform != RuntimePlatform.Android )
-				return;
-			
-			_plugin.Call( "setAlias", alias );
-		}
-		
-		
 		public static void setGender( string gender )
 		{
 			if( Application.platform != RuntimePlatform.Android )
@@ -164,17 +154,6 @@ public partial class Kiip : MonoBehaviour
 			if( Application.platform == RuntimePlatform.IPhonePlayer )
 				_kiipSetEmail( email );
 		}
-
-
-		[DllImport("__Internal")]
-		private static extern void _kiipSetAlias( string alias );
-
-		public static void setAlias( string alias )
-		{
-			if( Application.platform == RuntimePlatform.IPhonePlayer )
-				_kiipSetAlias( alias );
-		}
-
 
 		[DllImport("__Internal")]
 		private static extern void _kiipSetGender( string gender );
