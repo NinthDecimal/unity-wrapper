@@ -52,16 +52,7 @@ public partial class Kiip : MonoBehaviour
 				KiipShim.setEmail( value );
 		}
 	}
-	
-	public string alias
-	{
-		set
-		{
-			if( _instance != null )
-				KiipShim.setAlias( value );
-		}
-	}
-	
+
 	public string gender
 	{
 		set
