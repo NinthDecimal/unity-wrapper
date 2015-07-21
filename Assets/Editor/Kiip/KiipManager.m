@@ -10,7 +10,7 @@
 
 
 void UnitySendMessage( const char * className, const char * methodName, const char * param );
-void UnityPause( bool pause );
+void UnityPause( int pause );
 UIViewController *UnityGetGLViewController();
 
 
