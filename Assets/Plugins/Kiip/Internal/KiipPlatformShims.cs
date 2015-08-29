@@ -195,7 +195,15 @@ public partial class Kiip : MonoBehaviour
 				_kiipSaveMoment( momentId, val );
 		}
 		
-		
+		[DllImport("__Internal")]
+		private static extern void _kiipShowPoptart();
+
+		public static void showPoptart()
+		{
+			if( Application.platform == RuntimePlatform.IPhonePlayer )
+				_kiipShowPoptart();
+		}
+
 		public static void startSession()
 		{}
 		

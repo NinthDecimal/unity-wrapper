@@ -13,6 +13,11 @@ void UnitySendMessage( const char * className, const char * methodName, const ch
 void UnityPause( int pause );
 UIViewController *UnityGetGLViewController();
 
+@interface KiipManager (Private) 
+
+@property (weak, nonatomic) KPPoptart *localPoptart;
+
+@end
 
 @implementation KiipManager
 
@@ -59,6 +64,14 @@ UIViewController *UnityGetGLViewController();
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Public
 
+- (void) showRemotePoptart
+{
+	if (self.localPoptart) {
+		[self showPoptart:self.localPoptart];
+		self.localPoptart = null;
+	}
+}
+
 - (void)saveMoment:(NSString*)momentId value:(double)value
 {
 	if( value > 0 )
@@ -72,7 +85,8 @@ UIViewController *UnityGetGLViewController();
 			else
 			{
 				UnitySendMessage( "Kiip", "onSaveMomentFinished", "" );
-				[self showPoptart:poptart];
+				self.localPoptart = poptart;
+				//[self showPoptart:poptart];
 			}
 		}];
 	}
@@ -87,7 +101,8 @@ UIViewController *UnityGetGLViewController();
 			else
 			{
 				UnitySendMessage( "Kiip", "onSaveMomentFinished", "" );
-				[self showPoptart:poptart];
+				self.localPoptart = poptart;
+				//[self showPoptart:poptart];
 			}
 		}];
 	}

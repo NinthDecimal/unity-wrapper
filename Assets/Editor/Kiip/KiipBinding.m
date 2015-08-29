@@ -34,6 +34,10 @@ void _kiipSaveMoment( const char * momentId, double val )
 	[[KiipManager sharedManager] saveMoment:GetStringParam( momentId ) value:val];
 }
 
+void _kiipShowPoptart()
+{
+	[[KiipManager sharedManager] showRemotePoptart];
+}
 
 void _kiipSetShouldAutorotate( bool shouldAutorotate )
 {
