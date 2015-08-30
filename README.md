@@ -16,6 +16,7 @@
 - (Android only) before building your apk select the "Generate AndroidManifest.xml file" from the Kiip menu to create an AndroidManifest.xml file
 - Build and run on your device and watch the logs for relevant information
 
+
 ## Properties
 
     public bool shouldAutoRotate
@@ -28,3 +29,4 @@
 
     public static void saveMoment( string momentId )
     public static void saveMoment( string momentId, double val )
+    public static void showPoptart() #iOS Only

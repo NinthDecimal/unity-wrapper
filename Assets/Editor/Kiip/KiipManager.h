@@ -15,7 +15,8 @@
 
 + (KiipManager*)sharedManager;
 
-
 - (void)saveMoment:(NSString*)momentId value:(double)value;
+
+- (void)showRemotePoptart;
 
 @end

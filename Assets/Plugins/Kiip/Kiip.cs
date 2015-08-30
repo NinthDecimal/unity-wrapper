@@ -149,7 +149,13 @@ public partial class Kiip : MonoBehaviour
 		if( _instance != null )
 			KiipShim.saveMoment( momentId, val );
 	}
-	
+
+	public static void showPoptart()
+	{
+		if( _instance != null )
+			KiipShim.showPoptart();
+	}
+
 	#endregion
 	
 #endif

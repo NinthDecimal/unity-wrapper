@@ -66,7 +66,7 @@ public class KiipEventListener : MonoBehaviour
 	}
 
 
-	void onSaveMomentFinishedEvent()
+	void onSaveMomentFinishedEvent(bool flag)
 	{
 		Debug.Log( "onSaveMomentFinishedEvent" );
 	}

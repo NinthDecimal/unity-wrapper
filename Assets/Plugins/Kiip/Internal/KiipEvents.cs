@@ -50,7 +50,7 @@ public partial class Kiip : MonoBehaviour
 	public static event Action<string> onSaveMomentFailedEvent;
 
 	// Fired when a moment is successfully saved
-	public static event Action onSaveMomentFinishedEvent;
+	public static event Action<bool> onSaveMomentFinishedEvent;
 
 	// Fired when a Content object is received
 	public static event Action<Content> onContentEvent;
@@ -111,10 +111,17 @@ public partial class Kiip : MonoBehaviour
 	}
 
 
-	public void onSaveMomentFinished( string empty )
+	public void onSaveMomentFinished( string param )
 	{
-		if( onSaveMomentFinishedEvent != null )
-			onSaveMomentFinishedEvent();
+		if( onSaveMomentFinishedEvent != null ) 
+		{
+			if ( string.IsNullOrEmpty( param ) ){ param = "false"; }
+			if ( param == "true") {
+				onSaveMomentFinishedEvent(true);
+			} else {
+				onSaveMomentFinishedEvent(false);
+			}
+		}
 	}
 
 
