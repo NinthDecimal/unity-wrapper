@@ -84,8 +84,13 @@ UIViewController *UnityGetGLViewController();
 			}
 			else
 			{
-				UnitySendMessage( "Kiip", "onSaveMomentFinished", "" );
-				self.localPoptart = poptart;
+				self.localPoptart = null;
+				if (poptart) {
+					UnitySendMessage( "Kiip", "onSaveMomentFinished", "true" );	
+					self.localPoptart = poptart;
+				} else {
+					UnitySendMessage( "Kiip", "onSaveMomentFinished", "false" );
+				}				
 				//[self showPoptart:poptart];
 			}
 		}];
@@ -100,7 +105,13 @@ UIViewController *UnityGetGLViewController();
 			}
 			else
 			{
-				UnitySendMessage( "Kiip", "onSaveMomentFinished", "" );
+				self.localPoptart = null;
+				if (poptart) {
+					UnitySendMessage( "Kiip", "onSaveMomentFinished", "true" );	
+					self.localPoptart = poptart;
+				} else {
+					UnitySendMessage( "Kiip", "onSaveMomentFinished", "false" );
+				}
 				self.localPoptart = poptart;
 				//[self showPoptart:poptart];
 			}
