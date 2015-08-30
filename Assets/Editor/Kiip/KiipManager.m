@@ -68,7 +68,7 @@ UIViewController *UnityGetGLViewController();
 {
 	if (self.localPoptart) {
 		[self showPoptart:self.localPoptart];
-		self.localPoptart = null;
+		self.localPoptart = nil;
 	}
 }
 
@@ -84,14 +84,13 @@ UIViewController *UnityGetGLViewController();
 			}
 			else
 			{
-				self.localPoptart = null;
+				self.localPoptart = nil;
 				if (poptart) {
 					UnitySendMessage( "Kiip", "onSaveMomentFinished", "true" );	
 					self.localPoptart = poptart;
 				} else {
 					UnitySendMessage( "Kiip", "onSaveMomentFinished", "false" );
-				}				
-				//[self showPoptart:poptart];
+				}
 			}
 		}];
 	}
@@ -105,7 +104,7 @@ UIViewController *UnityGetGLViewController();
 			}
 			else
 			{
-				self.localPoptart = null;
+				self.localPoptart = nil;
 				if (poptart) {
 					UnitySendMessage( "Kiip", "onSaveMomentFinished", "true" );	
 					self.localPoptart = poptart;
@@ -113,7 +112,6 @@ UIViewController *UnityGetGLViewController();
 					UnitySendMessage( "Kiip", "onSaveMomentFinished", "false" );
 				}
 				self.localPoptart = poptart;
-				//[self showPoptart:poptart];
 			}
 		}];
 	}
