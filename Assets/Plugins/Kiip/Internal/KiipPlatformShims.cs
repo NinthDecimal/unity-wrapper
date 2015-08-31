@@ -102,6 +102,14 @@ public partial class Kiip : MonoBehaviour
 			
 			_plugin.Call( "saveMoment", momentId, val );
 		}
+
+		public static void showPoptart() 
+		{
+			if( Application.platform != RuntimePlatform.Android )
+				return;
+
+			_plugin.Call ( "showPoptart" );
+		}
 		
 	}
 	
