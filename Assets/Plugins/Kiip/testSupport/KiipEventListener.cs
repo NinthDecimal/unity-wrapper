@@ -71,7 +71,7 @@ public class KiipEventListener : MonoBehaviour
 		if (flag) {
 			Kiip.showPoptart();
 		}
-		Debug.Log( "onSaveMomentFinishedEvent" );
+		Debug.Log( "onSaveMomentFinishedEvent ---- " + flag);
 	}
 
 

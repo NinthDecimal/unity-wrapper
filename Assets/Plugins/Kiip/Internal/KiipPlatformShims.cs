@@ -64,7 +64,15 @@ public partial class Kiip : MonoBehaviour
 			
 			_plugin.Call( "setBirthday", birthday );
 		}
-		
+
+		public static void setTestMode( bool testMode )
+		{
+			if( Application.platform != RuntimePlatform.Android )
+				return;
+			
+			_plugin.Call( "setTestMode", testMode );
+		}
+
 		#endregion
 		
 		
@@ -131,6 +139,16 @@ public partial class Kiip : MonoBehaviour
 		{
 			if( Application.platform == RuntimePlatform.IPhonePlayer )
 				_kiipSetShouldAutorotate( shouldAutorotate );
+		}
+
+
+		[DllImport("__Internal")]
+		private static extern void _kiipSetTestMode( bool testMode );
+		
+		public static void setTestMode( bool testMode )
+		{
+			if( Application.platform == RuntimePlatform.IPhonePlayer )
+				_kiipSetTestMode( testMode );
 		}
 
 

@@ -74,6 +74,11 @@ extern NSString * const kKPCapabilities_Video;
  */
 @property (strong, nonatomic, readonly) NSString *deviceIdentifier;
 
+/**
+ The boolean value to receive test rewards in developement/debug mode. Default is NO.
+ */
+@property (assign, nonatomic) BOOL testMode;
+
 
 /** @name Setting and Getting the Delegate */
 
@@ -122,6 +127,8 @@ extern NSString * const kKPCapabilities_Video;
         nil if the request completed successfully.
  */
 - (void) saveMoment:(NSString *)momentId withCompletionHandler:(void (^)(KPPoptart *poptart, NSError *error))handler;
+
+- (void) saveMoment:(NSString *)momentId withAssetId:(NSString *)assetId withCompletionHandler:(void (^)(KPPoptart *, NSError *))handler;
 
 /**
  Saves a moment.

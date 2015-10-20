@@ -74,7 +74,16 @@ public partial class Kiip : MonoBehaviour
 				KiipShim.setBirthday( timestamp );
 		}
 	}
-	
+
+	public bool testMode 
+	{
+		set 
+		{
+			if( _instance != null )
+				KiipShim.setTestMode( value );
+		}
+	}
+
 	#endregion
 	
 	

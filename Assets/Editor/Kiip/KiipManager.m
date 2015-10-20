@@ -15,7 +15,7 @@ UIViewController *UnityGetGLViewController();
 
 @interface KiipManager ()
 
-@property (weak, nonatomic) KPPoptart *localPoptart;
+@property (strong, nonatomic) KPPoptart *localPoptart;
 
 @end
 
@@ -56,7 +56,7 @@ UIViewController *UnityGetGLViewController();
 	{
 		poptart.modal.delegate = self;
 	}
-	
+
 	[poptart show];
 }
 
@@ -86,8 +86,8 @@ UIViewController *UnityGetGLViewController();
 			{
                 self.localPoptart = nil;
 				if (poptart) {
-					UnitySendMessage( "Kiip", "onSaveMomentFinished", "true" );	
-					self.localPoptart = poptart;
+                    self.localPoptart = poptart;
+					UnitySendMessage( "Kiip", "onSaveMomentFinished", "true" );
 				} else {
 					UnitySendMessage( "Kiip", "onSaveMomentFinished", "false" );
 				}
@@ -106,8 +106,8 @@ UIViewController *UnityGetGLViewController();
 			{
                 self.localPoptart = nil;
 				if (poptart) {
+                    self.localPoptart = poptart;
 					UnitySendMessage( "Kiip", "onSaveMomentFinished", "true" );
-					self.localPoptart = poptart;
 				} else {
 					UnitySendMessage( "Kiip", "onSaveMomentFinished", "false" );
 				}

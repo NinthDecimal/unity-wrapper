@@ -24,9 +24,10 @@
     public string email
     public string gender
     public DateTime birthday
+    public bool testMode
 
 ## Methods
 
     public static void saveMoment( string momentId )
     public static void saveMoment( string momentId, double val )
-    public static void showPoptart() #iOS Only
+    public static void showPoptart()

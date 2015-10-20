@@ -44,6 +44,11 @@ void _kiipSetShouldAutorotate( bool shouldAutorotate )
 	[Kiip sharedInstance].shouldAutoRotate = shouldAutorotate;
 }
 
+void _kiipSetTestMode( bool testMode )
+{
+    [Kiip sharedInstance].testMode = testMode;
+}
+
 
 void _kiipSetInterfaceOrientation( int orientation )
 {

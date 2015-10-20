@@ -1,5 +1,12 @@
 # Kiip Unity Wrapper Updates
 
+## 10/19/2015
+
+- Upgrade to iOS SDK 2.3.0
+- Upgrade to Android SDK 2.3.0
+- Added new Api 'testMode' to receive test rewards during development
+- Added new Api 'showPoptart' to explicitly show rewards on 'onSaveMomentFinishedEvent' callback
+
 ## 7/17/2014 - 1.1
 
 - Upgrade to iOS SDK 2.1.0
