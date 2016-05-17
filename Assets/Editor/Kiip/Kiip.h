@@ -116,6 +116,12 @@ extern NSString * const kKPCapabilities_Video;
 - (id) initWithAppKey:(NSString *)appKey andSecret:(NSString *)appSecret;
 
 
+/**
+ Resets the kiip instance, this should be called when ever the user exits the system or to
+ create new kiip new instance.
+ */
+- (void) resetKiip;
+
 /** @name Saving Moments */
 
 /**

@@ -17,19 +17,19 @@ public class KiipGUIManager : MonoBehaviour
 	
 		if( GUI.Button( new Rect( xPos, yPos, width, height ), "Save Moment" ) )
 		{
-			Kiip.saveMoment( "my-moment-id" );
+			Kiip.saveMoment( "test" );
 		}
 	
 		
 		if( GUI.Button( new Rect( xPos, yPos += heightPlus, width, height ), "Save Another Moment" ) )
 		{
-			Kiip.saveMoment( "moment-of-inertia" );
+			Kiip.saveMoment( "test" );
 		}
 		
 	
 		if( GUI.Button( new Rect( xPos, yPos += heightPlus, width, height ), "Save Moment with Value" ) )
 		{
-			Kiip.saveMoment( "another-moment-id", 45 );
+			Kiip.saveMoment( "test", 45 );
 		}
 	
 	

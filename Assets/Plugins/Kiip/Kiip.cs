@@ -83,7 +83,7 @@ public partial class Kiip : MonoBehaviour
 				KiipShim.setTestMode( value );
 		}
 	}
-
+	
 	#endregion
 	
 	
@@ -163,6 +163,12 @@ public partial class Kiip : MonoBehaviour
 	{
 		if( _instance != null )
 			KiipShim.showPoptart();
+	}
+
+	public static void resetKiip()
+	{
+		if (_instance != null)
+			KiipShim.resetKiip();
 	}
 
 	#endregion

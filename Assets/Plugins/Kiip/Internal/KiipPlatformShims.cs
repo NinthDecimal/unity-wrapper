@@ -73,6 +73,14 @@ public partial class Kiip : MonoBehaviour
 			_plugin.Call( "setTestMode", testMode );
 		}
 
+		public static void resetKiip()
+		{
+			if( Application.platform != RuntimePlatform.Android )
+				return;
+			
+			_plugin.Call( "resetKiip" );
+		}
+
 		#endregion
 		
 		
@@ -149,6 +157,15 @@ public partial class Kiip : MonoBehaviour
 		{
 			if( Application.platform == RuntimePlatform.IPhonePlayer )
 				_kiipSetTestMode( testMode );
+		}
+
+		[DllImport("__Internal")]
+		private static extern void _kiipResetKiip();
+		
+		public static void resetKiip()
+		{
+			if( Application.platform == RuntimePlatform.IPhonePlayer )
+				_kiipResetKiip();
 		}
 
 
