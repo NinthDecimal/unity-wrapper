@@ -49,6 +49,10 @@ void _kiipSetTestMode( bool testMode )
     [Kiip sharedInstance].testMode = testMode;
 }
 
+void _kiipResetKiip()
+{
+    [[Kiip sharedInstance] resetKiip];
+}
 
 void _kiipSetInterfaceOrientation( int orientation )
 {
