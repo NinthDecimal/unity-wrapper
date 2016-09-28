@@ -28,7 +28,7 @@ UIViewController *UnityGetGLViewController();
 {
 	static dispatch_once_t pred;
 	static KiipManager *_sharedInstance = nil;
-	
+
 	dispatch_once( &pred, ^{ _sharedInstance = [[self alloc] init]; } );
 	return _sharedInstance;
 }
@@ -44,14 +44,14 @@ UIViewController *UnityGetGLViewController();
 		NSLog( @"no poptart to show" );
 		return;
 	}
-	
+
 	poptart.delegate = self;
-	
+
 	if( poptart.notification )
 	{
 		poptart.notification.delegate = self;
 	}
-	
+
 	if( poptart.modal )
 	{
 		poptart.modal.delegate = self;
