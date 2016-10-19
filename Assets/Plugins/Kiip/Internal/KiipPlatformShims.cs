@@ -73,6 +73,14 @@ public partial class Kiip : MonoBehaviour
 			_plugin.Call( "setTestMode", testMode );
 		}
 
+		public static void setUserId( string userId )
+		{
+			if( Application.platform != RuntimePlatform.Android )
+				return;
+
+			_plugin.Call( "setUserId", userId );
+		}
+
 		#endregion
 		
 		
@@ -149,6 +157,13 @@ public partial class Kiip : MonoBehaviour
 		{
 			if( Application.platform == RuntimePlatform.IPhonePlayer )
 				_kiipSetTestMode( testMode );
+		}
+
+		public static void setUserId( string userId )
+		{
+			if (Application.platform == RuntimePlatform.IPhonePlayer)
+				Debug.Log ("'setUserId' Yet to implement for iOS");
+				return;
 		}
 
 

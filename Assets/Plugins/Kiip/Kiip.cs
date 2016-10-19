@@ -53,6 +53,15 @@ public partial class Kiip : MonoBehaviour
 		}
 	}
 
+	public string userId 
+	{
+		set 
+		{
+			if( _instance != null )
+				KiipShim.setUserId( value );
+		}
+	}
+
 	public string gender
 	{
 		set
