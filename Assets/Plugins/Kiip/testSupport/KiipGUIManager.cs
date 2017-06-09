@@ -1,12 +1,19 @@
 using UnityEngine;
 using System.Collections.Generic;
-
-
+using UnityEngine.UI;
 
 public class KiipGUIManager : MonoBehaviour
 {
+    public InputField momentText, momentValue;
+    public Button notification;
+
+    void Start()
+    {
+        HideNotificaition();
+    }
+
 #if UNITY_ANDROID || UNITY_IPHONE
-	void OnGUI()
+    void OnGUI()
 	{
 		float yPos = 5.0f;
 		float xPos = 5.0f;
@@ -15,22 +22,37 @@ public class KiipGUIManager : MonoBehaviour
 		float heightPlus = height + 10.0f;
 	
 	
-		if( GUI.Button( new Rect( xPos, yPos, width, height ), "Save Moment" ) )
+		if( GUI.Button( new Rect( xPos, yPos, width, height ), "Save Moment with Default Notification" ) )
 		{
-			Kiip.saveMoment( "my-moment-id" );
-		}
+            HideNotificaition(); // hide custom notification
+
+            GameObject.Find("KiipEventListener").SendMessage("SetNotificationType", 0); // set default notification
+
+            if (momentText.text != "" && momentText != null)
+                Kiip.saveMoment(momentText.text);
+        }
 	
 		
-		if( GUI.Button( new Rect( xPos, yPos += heightPlus, width, height ), "Save Another Moment" ) )
+		if( GUI.Button( new Rect( xPos, yPos += heightPlus, width, height ), "Save Another Moment with Custom Notification" ) )
 		{
-			Kiip.saveMoment( "moment-of-inertia" );
-		}
+            HideNotificaition(); // hide custom notification
+
+            GameObject.Find("KiipEventListener").SendMessage("SetNotificationType", 1); // set custom notification
+
+            if (momentText.text != "" && momentText != null)
+                Kiip.saveMoment(momentText.text);
+        }
 		
 	
-		if( GUI.Button( new Rect( xPos, yPos += heightPlus, width, height ), "Save Moment with Value" ) )
+		if( GUI.Button( new Rect( xPos, yPos += heightPlus, width, height ), "Save Moment with Value with Custom Notification") )
 		{
-			Kiip.saveMoment( "another-moment-id", 45 );
-		}
+            HideNotificaition(); // hide custom notification
+
+            GameObject.Find("KiipEventListener").SendMessage("SetNotificationType", 1); // set custom notification
+
+            if (momentText.text != "" && momentText.text != null && momentValue.text != "" && momentValue != null)
+                Kiip.saveMoment(momentText.text, double.Parse(momentValue.text));
+        }
 	
 	
 		if( GUI.Button( new Rect( xPos, yPos += heightPlus, width, height ), "Set Kiip Properties" ) )
@@ -44,6 +66,25 @@ public class KiipGUIManager : MonoBehaviour
 			Kiip.instance.interfaceOrientation = DeviceOrientation.LandscapeLeft;
 			Kiip.instance.shouldAutoRotate = true;
 		}
-	}
+        
+    }
+
+    public void ShowNotification()
+    {
+        if (notification != null)
+            notification.gameObject.SetActive(true);
+    }
+
+    public void HideNotificaition()
+    {
+        if (notification != null)
+            notification.gameObject.SetActive(false);
+    }
+
+    public void OnNotificationClick()
+    {
+        HideNotificaition();
+        Kiip.showPoptart();
+    }
 #endif
 }
