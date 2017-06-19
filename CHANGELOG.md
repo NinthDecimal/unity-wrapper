@@ -1,5 +1,10 @@
 # Kiip Unity Wrapper Updates
 
+## 6/15/2017
+
+- Upgrade to Android SDK 2.3.3
+- Added new Api 'onVideoFinishedEvent' to be fired on 'onVideoFinished' event
+
 ## 10/19/2015
 
 - Upgrade to iOS SDK 2.3.0

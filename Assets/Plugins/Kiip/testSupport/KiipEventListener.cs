@@ -7,7 +7,18 @@ using System.Collections.Generic;
 public class KiipEventListener : MonoBehaviour
 {
 #if UNITY_IPHONE || UNITY_ANDROID
-	void OnEnable()
+
+    // 0 is refered as default notification type
+    // 1 is refered as custom notification type
+    private int notificationType = 0;
+
+    public void SetNotificationType(string value)
+    {
+        notificationType = (value == "default" ? 0 : 1);
+        Debug.Log("notificationType " + value);
+    }
+    
+    void OnEnable()
 	{
 		// Listen to all events for illustration purposes
 		Kiip.sessionFailedToStartEvent += sessionFailedToStartEvent;
@@ -24,7 +35,8 @@ public class KiipEventListener : MonoBehaviour
 		Kiip.onDismissPoptartEvent += onDismissPoptartEvent;
 		Kiip.onVideoShowEvent += onVideoShowEvent;
 		Kiip.onVideoDismissEvent += onVideoDismissEvent;
-	}
+        Kiip.onVideoFinishedEvent += onVideoFinishedEvent;
+    }
 
 
 	void OnDisable()
@@ -44,7 +56,8 @@ public class KiipEventListener : MonoBehaviour
 		Kiip.onDismissPoptartEvent -= onDismissPoptartEvent;
 		Kiip.onVideoShowEvent -= onVideoShowEvent;
 		Kiip.onVideoDismissEvent -= onVideoDismissEvent;
-	}
+        Kiip.onVideoFinishedEvent -= onVideoFinishedEvent;
+    }
 
 
 
@@ -69,8 +82,12 @@ public class KiipEventListener : MonoBehaviour
 	void onSaveMomentFinishedEvent(bool flag)
 	{
 		if (flag) {
-			Kiip.showPoptart();
-		}
+
+            if (notificationType == 0)
+                Kiip.showPoptart(); // show kiip default notification
+            else
+                GameObject.Find("ui").SendMessage("ShowNotification"); //show custom notificatino
+        }
 		Debug.Log( "onSaveMomentFinishedEvent ---- " + flag);
 	}
 
@@ -130,6 +147,11 @@ public class KiipEventListener : MonoBehaviour
 	{
 		Debug.Log( "onVideoDismissEvent" );
 	}
+
+    void onVideoFinishedEvent()
+    {
+        Debug.Log("onVideoFinishedEvent");
+    }
 #endif
 }
 

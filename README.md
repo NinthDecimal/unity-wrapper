@@ -13,6 +13,7 @@
 - Import the unitypackage into your project
 - Open the KiipTestScene in Unity
 - Configure your Kiip application information in the inspector for the Kiip GameObject
+- To switch between default and custom notification, go to Plugins/Kiip/testsupport and look for onSaveMomentFinishedEvent in KiipEventListener.cs
 - (Android only) before building your apk select the "Generate AndroidManifest.xml file" from the Kiip menu to create an AndroidManifest.xml file
 - Build and run on your device and watch the logs for relevant information
 
