@@ -1,5 +1,9 @@
 # Kiip Unity Wrapper Updates
 
+## 6/30/2017
+
+- Added unity PostProcessBuildAttribute to auto include requried ios frameworks
+
 ## 6/15/2017
 
 - Upgrade to Android SDK 2.3.3
