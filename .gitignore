@@ -21,3 +21,5 @@ _FinalPackages/*
 AndroidManifest.xml
 AndroidManifest.xml.meta
 Library
+
+/[Oo]bj/
