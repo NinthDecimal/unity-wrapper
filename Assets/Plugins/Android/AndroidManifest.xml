@@ -29,13 +29,6 @@
             <meta-data android:name="unityplayer.UnityActivity" android:value="true" />
         </activity>
 
-        <provider
-            android:name="me.kiip.sdk.KiipSDKProvider"
-            android:authorities="me.kiip.sdk.KiipSDKProvider<APP_KEY>"
-            android:exported="true"
-            android:multiprocess="true" >
-        </provider>
-
     </application>
 
 		<uses-permission android:name="android.permission.INTERNET"/>
