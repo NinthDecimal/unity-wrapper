@@ -2,8 +2,18 @@
 
 ## Integration instructions for an existing project
 
+### iOS
 - Import the unitypackage into your project
 - Drag the Kiip prefab into your loading scene (this should be placed in a scene that is only visited once so that only one will ever exist)
+- Select all of the files underneath the Editor/Kiip directory, and in the inspector make sure that correct platform is selected as a supported platform.
+- Select the PassKit framework
+- Configure your Kiip application information in the inspector for the Kiip GameObject
+- Start calling any methods on the Kiip class wherever relevant for your game
+
+### Android 
+- Import the unitypackage into your project
+- Drag the Kiip prefab into your loading scene (this should be placed in a scene that is only visited once so that only one will ever exist)
+- Select all of the files underneath the Editor/Kiip directory, and in the inspector make sure that correct platform is selected as a supported platform.
 - Configure your Kiip application information in the inspector for the Kiip GameObject
 - Start calling any methods on the Kiip class wherever relevant for your game
 - (Android only) before building your apk select the "Generate AndroidManifest.xml file" from the Kiip menu to create an AndroidManifest.xml file
