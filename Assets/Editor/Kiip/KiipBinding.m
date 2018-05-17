@@ -23,9 +23,8 @@
 
 void _kiipInit( const char * appKey, const char * appSecret )
 {
-	Kiip *kiip = [[Kiip alloc] initWithAppKey:GetStringParam( appKey ) andSecret:GetStringParam( appSecret )];
-	kiip.delegate = [KiipManager sharedManager];
-	[Kiip setSharedInstance:kiip];
+	[Kiip initWithAppKey:GetStringParam( appKey ) andSecret:GetStringParam( appSecret )];
+    [[Kiip sharedInstance] setDelegate:[KiipManager sharedManager]];
 }
 
 
@@ -41,34 +40,47 @@ void _kiipShowPoptart()
 
 void _kiipSetShouldAutorotate( bool shouldAutorotate )
 {
-	[Kiip sharedInstance].shouldAutoRotate = shouldAutorotate;
+	Kiip *kiip = [Kiip sharedInstance];
+    kiip.shouldAutoRotate = shouldAutorotate;
 }
 
 void _kiipSetTestMode( bool testMode )
 {
-    [Kiip sharedInstance].testMode = testMode;
+    [[Kiip sharedInstance] setTestMode:testMode];
 }
 
 
 void _kiipSetInterfaceOrientation( int orientation )
 {
-	[Kiip sharedInstance].interfaceOrientation = (UIInterfaceOrientation)orientation;
+	Kiip *kiip = [Kiip sharedInstance];
+    kiip.interfaceOrientation = (UIInterfaceOrientation)orientation;
 }
 
 
 void _kiipSetEmail( const char * email )
 {
-	[Kiip sharedInstance].email = GetStringParam( email );
+	Kiip *kiip = [Kiip sharedInstance];
+    kiip.email = GetStringParam( email );
 }
 
 void _kiipSetGender( const char * gender )
 {
-	[Kiip sharedInstance].gender = GetStringParam( gender );
+	Kiip *kiip = [Kiip sharedInstance];
+    kiip.gender = GetStringParam( gender );
 }
 
 
 void _kiipSetBirthday( int birthday )
 {
 	NSDate *date = [NSDate dateWithTimeIntervalSince1970:birthday];
-	[Kiip sharedInstance].birthday = date;
+	Kiip *kiip = [Kiip sharedInstance];
+    kiip.birthday = date;
 }
+
+
+void _kiipSetAgeGroup( int ageGroup )
+{
+    Kiip *kiip = [Kiip sharedInstance];
+    kiip.agegroup = ageGroup;
+}
+

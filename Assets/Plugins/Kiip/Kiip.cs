@@ -84,6 +84,15 @@ public partial class Kiip : MonoBehaviour
 		}
 	}
 
+	public int ageGroup
+	{
+		set
+		{
+			if( _instance != null )
+				KiipShim.setAgeGroup( value );
+		}
+	}
+
 	public bool testMode 
 	{
 		set 
