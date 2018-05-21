@@ -214,6 +214,15 @@ public partial class Kiip : MonoBehaviour
 			if( Application.platform == RuntimePlatform.IPhonePlayer )
 				_kiipSetBirthday( birthday );
 		}
+
+		[DllImport("__Internal")]
+		private static extern void _kiipSetAgeGroup( int ageGroup );
+
+		public static void setAgeGroup( int ageGroup )
+		{
+			if( Application.platform == RuntimePlatform.IPhonePlayer )
+				_kiipSetAgeGroup( ageGroup );
+		}
 		
 		#endregion
 		

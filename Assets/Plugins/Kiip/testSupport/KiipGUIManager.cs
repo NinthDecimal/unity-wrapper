@@ -61,6 +61,7 @@ public class KiipGUIManager : MonoBehaviour
 			Kiip.instance.testMode = true;
 			Kiip.instance.birthday = System.DateTime.Now;
 			Kiip.instance.email = "someemail@email.net";
+			Kiip.instance.ageGroup = 0;
 			
 			// these next two are iOS only
 			Kiip.instance.interfaceOrientation = DeviceOrientation.LandscapeLeft;

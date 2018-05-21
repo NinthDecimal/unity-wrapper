@@ -11,3 +11,5 @@
 #import "KPNotification.h"
 #import "KPModal.h"
 #import "KPNotificationView.h"
+#import "KPNativeRewardView.h"
+#import "KPTableView.h"

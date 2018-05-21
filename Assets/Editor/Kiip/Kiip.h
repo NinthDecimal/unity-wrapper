@@ -7,15 +7,22 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h> 
 
 extern NSString * const KPErrorDomain;
 extern NSString * const KPVersion;
 
-
 extern NSString * const kKPCapabilities_Real;
 extern NSString * const kKPCapabilities_Virtual;
 extern NSString * const kKPCapabilities_Video;
+extern NSString * const kKPCapabilities_AR;
 
+typedef enum AgeGroup : NSUInteger {
+    kAgeGroup13to17,
+    KAgeGroup18to34,
+    kAgeGroup35to49,
+    kAgeGroup50
+} AgeGroup;
 
 @protocol KiipDelegate;
 @class KPNotificationView;
@@ -60,6 +67,12 @@ extern NSString * const kKPCapabilities_Video;
 @property (strong, nonatomic) NSString *email;
 
 /**
+ The user's id. Setting this will set user Id.
+ */
+@property (strong, nonatomic) NSString *userId;
+
+
+/**
  The user's gender. Setting this will help target rewards to your users more effectively.
  */
 @property (strong, nonatomic) NSString *gender;
@@ -68,6 +81,12 @@ extern NSString * const kKPCapabilities_Video;
  The user's birthday. Setting this will help target rewards to your users more effectively.
  */
 @property (strong, nonatomic) NSDate *birthday;
+
+/**
+ The user's agegroup from pre-defined enums. 
+ Setting this will help targe rewards to your users more effectively.
+ */
+@property (assign, nonatomic) AgeGroup agegroup;
 
 /**
  The the string Kiip uses to uniquely identify devices.
@@ -97,12 +116,13 @@ extern NSString * const kKPCapabilities_Video;
  */
 + (Kiip *) sharedInstance;
 
-/**
- Sets the shared Kiip instance
- 
- @param kiip New shared Kiip instance.
- */
-+ (void) setSharedInstance:(Kiip *)kiip;
+// Deprecated or removed from 2.3.1 version
+///**
+// Sets the shared Kiip instance
+// 
+// @param kiip New shared Kiip instance.
+// */
+//+ (void) setSharedInstance:(Kiip *)kiip;
 
 
 /** @name Creating a new Kiip object */
@@ -113,7 +133,7 @@ extern NSString * const kKPCapabilities_Video;
  @param appKey The Application's key.
  @param appSecret The Application's secret.
  */
-- (id) initWithAppKey:(NSString *)appKey andSecret:(NSString *)appSecret;
++ (void) initWithAppKey:(NSString *)appKey andSecret:(NSString *)appSecret;
 
 
 /** @name Saving Moments */
