@@ -1,5 +1,12 @@
 # Kiip Unity Wrapper Updates
 
+## 5/31/2018
+
+- Upgrade to iOS / Android SDK 3.0.0+
+- Ability to capture more accurate user data
+- Xcode 9.3 or above is required
+- Required minimum SDK version changed from 9 to 14
+
 ## 1/08/2018
 
 - Upgrade to Android SDK 2.3.5
