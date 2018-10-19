@@ -8,14 +8,16 @@
 - Start calling any methods on the Kiip class wherever relevant for your game
 - (Android only) before building your apk select the "Generate AndroidManifest.xml file" from the Kiip menu to create an AndroidManifest.xml file
 
-## Integration instructions for testing the demo scene
+## Integration instructions for testing the Kiip demo scene - Sample App
 
 - Import the unitypackage into your project
-- Open the KiipTestScene in Unity
-- Configure your Kiip application information in the inspector for the Kiip GameObject
-- To switch between default and custom notification, go to Plugins/Kiip/testsupport and look for onSaveMomentFinishedEvent in KiipEventListener.cs
-- (Android only) before building your apk select the "Generate AndroidManifest.xml file" from the Kiip menu to create an AndroidManifest.xml file
-- Build and run on your device and watch the logs for relevant information
+- Open the KiipTestScene in Unity that's located under Assets/Plugins/Kiip/testSupport project directory
+- Configure your Kiip application information (app key & secret) in the inspector for the Kiip GameObject that's located under Asset/Plugins/Kiip project directory
+- (Android only) Before building your apk make sure that the AndroidManifest.xml file exist inside Assets/Plugins/Kiip
+- Go to Build Settings under file menu and click on Add Open Scenes to select KiipTestScene
+- Make sure you selected Android (or iOS) platform.
+- Click on Player Settings and change Package Name to something unique (ex. me.kiip.sample)
+- Click Build and Run to run on your device and watch the logs for relevant information
 
 
 ## Properties
